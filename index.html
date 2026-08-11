@@ -9,16 +9,14 @@
             margin: 0;
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            /* 預設背景，若圖片載入失敗可作為底色 */
             background-color: #0b1d3a;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            color: #051c3a; /* 改為深藍色，確保預設文字清晰 */
+            color: #051c3a;
         }
 
-        /* 桌面版背景設定 */
         .bg-container {
             position: fixed;
             top: 0;
@@ -32,7 +30,6 @@
             background-repeat: no-repeat;
         }
 
-        /* 手機版自動切換第二張背景圖 */
         @media (max-width: 768px) {
             .bg-container {
                 background-image: url('big2.jpg');
@@ -40,7 +37,7 @@
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.90); /* 半透明白底，讓深藍色文字對比更強、絕對不被遮擋 */
+            background: rgba(255, 255, 255, 0.90);
             padding: 30px 20px;
             border-radius: 16px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.3);
@@ -52,7 +49,7 @@
 
         h2 {
             text-align: center;
-            color: #051c3a; /* 深藍色標題 */
+            color: #051c3a;
             margin-bottom: 25px;
             font-size: 24px;
             font-weight: bold;
@@ -66,7 +63,7 @@
             display: block;
             margin-bottom: 8px;
             font-weight: bold;
-            color: #051c3a; /* 深藍色標籤文字 */
+            color: #051c3a;
             font-size: 16px;
         }
 
@@ -75,12 +72,12 @@
         textarea {
             width: 100%;
             padding: 14px;
-            border: 2px solid #355c7d; /* 深藍邊框 */
+            border: 2px solid #355c7d;
             border-radius: 8px;
             box-sizing: border-box;
             font-size: 16px;
             background-color: #ffffff;
-            color: #051c3a; /* 輸入文字為深藍色 */
+            color: #051c3a;
         }
 
         input:focus, textarea:focus {
@@ -96,8 +93,8 @@
 
         button {
             width: 100%;
-            background-color: #051c3a; /* 深藍色按鈕 */
-            color: #ffffff; /* 按鈕文字保持白色以維持對比 */
+            background-color: #051c3a;
+            color: #ffffff;
             padding: 15px;
             border: none;
             border-radius: 8px;
@@ -114,7 +111,7 @@
         #loading {
             display: none;
             text-align: center;
-            color: #051c3a; /* 深藍色載入提示 */
+            color: #051c3a;
             font-weight: bold;
             margin-top: 15px;
             font-size: 16px;
@@ -123,21 +120,19 @@
         #responseMessage {
             display: none;
             margin-top: 20px;
-            padding: 15px;
-            background-color: #e8f0fe;
-            border: 2px solid #051c3a;
-            border-radius: 8px;
+            padding: 10px;
+            background-color: transparent; /* 取消底色，與整體融為一體 */
+            border: none;                  /* 取消邊框 */
             text-align: center;
-            color: #051c3a; /* 深藍色回應訊息 */
+            color: #051c3a !important;     /* 強制指定與標題一模一樣的深藍色 */
             font-weight: bold;
-            font-size: 16px;
-            line-height: 1.5;
+            font-size: 18px;               
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
 
-    <!-- 背景圖容器 -->
     <div class="bg-container"></div>
 
     <div class="container">
@@ -167,7 +162,6 @@
     </div>
 
     <script>
-        // 請確保這裡填入您正確的 Google Apps Script 部署網址（WebApp URL）
         const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz_9zR2wE3e2p-example-url/exec"; 
 
         const form = document.getElementById('consultForm');
@@ -178,22 +172,19 @@
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // 隱藏表單、顯示讀取中
             submitBtn.style.display = 'none';
             loading.style.display = 'block';
             responseMessage.style.display = 'none';
 
-            // 收集表單資料
             const formData = {
                 name: document.getElementById('name').value,
                 phone: document.getElementById('phone').value,
                 message: document.getElementById('message').value
             };
 
-            // 透過 fetch 將資料傳送到 Google Sheets
             fetch(SCRIPT_URL, {
                 method: 'POST',
-                mode: 'no-cors', // 防止跨網域擋阻
+                mode: 'no-cors',
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -202,7 +193,6 @@
             .then(() => {
                 loading.style.display = 'none';
                 form.reset();
-                // 顯示您指定的感謝與提醒文字（深藍色樣式）
                 responseMessage.style.display = 'block';
                 responseMessage.innerHTML = "感謝您的填寫，我們已經收到您的訊息，專員會儘快與您聯絡。";
             })
@@ -210,7 +200,7 @@
                 loading.style.display = 'none';
                 submitBtn.style.display = 'block';
                 responseMessage.style.display = 'block';
-                responseMessage.style.color = '#d9534f'; // 錯誤時顯示紅字警示
+                responseMessage.style.color = '#d9534f';
                 responseMessage.innerHTML = "傳送發生錯誤，請稍後再試一次，或直接與我們電話聯繫。";
                 console.error('Error!', error.message);
             });
