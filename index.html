@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EZWAY建碩會計事務所 - 諮詢表單</title>
+    <title>EZWAY建碩會計事務所 - 線上諮詢表單</title>
     <style>
-        /* 強制全站所有文字與標籤統一為同一個深藍色 */
         body {
             margin: 0;
             padding: 0;
@@ -15,9 +14,9 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            color: #051c3a !important;
         }
 
+        /* 桌面版背景設定 */
         .bg-container {
             position: fixed;
             top: 0;
@@ -31,6 +30,7 @@
             background-repeat: no-repeat;
         }
 
+        /* 手機版自動切換第二張背景圖 */
         @media (max-width: 768px) {
             .bg-container {
                 background-image: url('big2.jpg');
@@ -46,15 +46,11 @@
             max-width: 480px;
             box-sizing: border-box;
             margin: 20px;
-            color: #051c3a !important;
-        }
-
-        h2, label, input, textarea, button, #loading, #responseMessage {
-            color: #051c3a !important;
         }
 
         h2 {
             text-align: center;
+            color: #051c3a;
             margin-bottom: 25px;
             font-size: 24px;
             font-weight: bold;
@@ -68,6 +64,7 @@
             display: block;
             margin-bottom: 8px;
             font-weight: bold;
+            color: #333333;
             font-size: 16px;
         }
 
@@ -76,11 +73,12 @@
         textarea {
             width: 100%;
             padding: 14px;
-            border: 2px solid #355c7d;
+            border: 2px solid #ccc;
             border-radius: 8px;
             box-sizing: border-box;
             font-size: 16px;
             background-color: #ffffff;
+            color: #333333;
         }
 
         input:focus, textarea:focus {
@@ -96,8 +94,8 @@
 
         button {
             width: 100%;
-            background-color: #051c3a !important;
-            color: #ffffff !important; /* 按鈕維持白字以保持識別度 */
+            background-color: #051c3a;
+            color: #ffffff;
             padding: 15px;
             border: none;
             border-radius: 8px;
@@ -108,32 +106,37 @@
         }
 
         button:hover {
-            background-color: #0a2e5c !important;
+            background-color: #0a2e5c;
         }
 
         #loading {
             display: none;
             text-align: center;
+            color: #666666;
             font-weight: bold;
             margin-top: 15px;
             font-size: 16px;
         }
 
+        /* 專門針對送出後的第二頁感謝文字，精準改為漂亮的深藍色 */
         #responseMessage {
             display: none;
             margin-top: 20px;
-            padding: 10px;
-            background-color: transparent;
-            border: none;
+            padding: 15px;
+            background-color: #f0f4f8;
+            border: 2px solid #051c3a;
+            border-radius: 8px;
             text-align: center;
+            color: #051c3a !important;
             font-weight: bold;
-            font-size: 18px;
+            font-size: 17px;
             line-height: 1.6;
         }
     </style>
 </head>
 <body>
 
+    <!-- 背景圖容器 -->
     <div class="bg-container"></div>
 
     <div class="container">
@@ -163,6 +166,7 @@
     </div>
 
     <script>
+        // 請確保這裡填入您正確的 Google Apps Script 部署網址（WebApp URL）
         const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz_9zR2wE3e2p-example-url/exec"; 
 
         const form = document.getElementById('consultForm');
