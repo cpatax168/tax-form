@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EZ開公司--諮詢表單</title>
+    <style>
+        /* 基礎頁面設定 */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #0f2b5c;
+        }
+
+        .page {
+            width: 100%;
+            min-height: 100vh;
+            background-position: center top;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+
+        /* 第一頁：cover 自動填滿 */
+        #page1 { 
+            background-image: url('big1.jpg'); 
+            background-size: cover;
+            background-color: #0f2b5c; 
+            justify-content: center; 
+        }
+
+        /* 第二頁：cover 自動填滿，整體向右移 1.3 公分 */
+        #page2 { 
+            background-image: url('big2.jpg'); 
+            background-size: cover; 
+            background-color: #0f2b5c; 
+            justify-content: flex-start; 
+            padding-left: 97px; 
+            display: none; 
+        }
+
+        /* 第一頁卡片：置中 */
+        .card-center {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 50px;
+            border-radius: 30px;
+            width: 100%;
+            max-width: 650px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        /* 第二頁卡片：整體區塊內所有元素嚴格置中對齊，形成完美群組 */
+        .card-group-left {
+            background: transparent;
+            padding: 20px 0;
+            width: 100%;
+            max-width: 650px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        h1 { font-size: 36px; color: #0f2b5c; margin-bottom: 30px; font-weight: 900; }
+        
+        .form-group { margin-bottom: 30px; text-align: left; }
+        
+        label.main-label { 
+            display: block; 
+            font-size: 24px; 
+            font-weight: bold; 
+            color: #1a202c; 
+            margin-bottom: 12px; 
+        }
+
+        /* 使用與字體完美融合、大方好看的漂亮紅色星號 */
+        .required-star {
+            color: #e53e3e;
+            font-size: 30px;
+            line-height: 0;
+            vertical-align: -5px;
+            margin-left: 3px;
+            font-weight: 900;
+        }
+
+        /* 公司欄位旁邊的 (*必填) 紅色字樣 */
+        .note-text {
+            font-size: 18px;
+            color: #e53e3e;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+
+        /* 輸入框放大 */
+        .input-oval {
+            width: 100%;
+            padding: 20px 25px;
+            border-radius: 50px;
+            border: 2px solid #5294e2;
+            font-size: 20px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            color: #1a202c;
+        }
+
+        textarea.input-oval {
+            border-radius: 20px;
+            font-size: 20px;
+        }
+
+        /* 彩色活潑選項（放大 1.8 倍，方便長輩點擊） */
+        .color-cards-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .color-card {
+            display: flex;
+            align-items: center;
+            padding: 22px 28px;
+            border-radius: 30px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .color-card input[type="checkbox"] {
+            width: 28px;
+            height: 28px;
+            margin-right: 18px;
+            cursor: pointer;
+        }
+
+        .card-yellow { background-color: #f6c90e; color: #1a202c; }
+        .card-green  { background-color: #2bb673; color: #ffffff; }
+        .card-orange { background-color: #f7931e; color: #1a202c; }
+        .card-blue   { background-color: #3b82f6; color: #ffffff; }
+        .card-purple { background-color: #8b5cf6; color: #ffffff; }
+        .card-gray   { background-color: #64748b; color: #ffffff; }
+
+        /* 送出按鈕放大 */
+        .submit-btn {
+            width: 100%;
+            padding: 22px;
+            border-radius: 50px;
+            border: none;
+            background-color: #0f2b5c;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(15, 43, 92, 0.4);
+        }
+        .submit-btn:hover { background-color: #1e3a8a; }
+
+        /* 第二頁白色字體樣式：置中對齊 */
+        .ty-title {
+            font-size: 44px;
+            font-weight: 900;
+            color: #ffffff; 
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .ty-text {
+            font-size: 28px;
+            font-weight: 850;
+            color: #ffffff; 
+            line-height: 1.8;
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        /* 下方深藍色字體與外框：整體置中 */
+        .ty-brand {
+            font-size: 38px;
+            font-weight: 950;
+            color: #0f2b5c; 
+            letter-spacing: 1px;
+            text-align: center;
+            line-height: 1.5;
+            background: rgba(255, 255, 255, 0.85); 
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            max-width: 500px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 第一頁：填寫表單（置中） -->
+    <div id="page1" class="page">
+        <div class="card-center">
+            <h1>EZ開公司 諮詢表單</h1>
+            
+            <!-- 請將 action 替換為您的 Google Apps Script 網址以正常回傳 Excel -->
+            <form id="consultForm" action="https://script.google.com/macros/s/AKfycbzjOERz_ZIhbldcm-kyS7P6YuI1OGiecnEwu3w4wTDdAuy2Xu_pDW6wQa5MW1tAELpb5g/exec" method="POST">
+                
+                <div class="form-group">
+                    <label class="main-label">公司 <span class="required-star">*</span><span class="note-text">(*必填)</span></label>
+                    <input type="text" class="input-oval" name="公司" placeholder="請輸入公司名稱" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="main-label">姓名 <span class="required-star">*</span></label>
+                    <input type="text" class="input-oval" name="姓名" placeholder="請輸入您的姓名" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="main-label">連絡電話 <span class="required-star">*</span></label>
+                    <input type="text" class="input-oval" name="連絡電話" placeholder="請輸入連絡電話" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="main-label">您想諮詢哪方面的問題 <span class="required-star">*</span></label>
+                    <div class="color-cards-grid">
+                        <label class="color-card card-yellow"><input type="checkbox" name="諮詢項目" value="工商登記"> 工商登記</label>
+                        <label class="color-card card-green"><input type="checkbox" name="諮詢項目" value="記帳\營業稅營所稅申報"> 記帳 \ 營業稅營所稅申報</label>
+                        <label class="color-card card-orange"><input type="checkbox" name="諮詢項目" value="稅務諮詢"> 稅務諮詢</label>
+                        <label class="color-card card-blue"><input type="checkbox" name="諮詢項目" value="企業評價\碳排放"> 企業評價 \ 碳排放</label>
+                        <label class="color-card card-purple"><input type="checkbox" name="諮詢項目" value="資產規劃\海外移民"> 資產規劃 \ 海外移民</label>
+                        <label class="color-card card-gray"><input type="checkbox" name="諮詢項目" value="其他"> 其他項目</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="main-label">請說明您目前想解決的問題 <span class="required-star">*</span></label>
+                    <textarea class="input-oval" name="想解決的問題" rows="4" placeholder="請簡述您的需求..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">確認送出諮詢</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 第二頁：感謝回覆頁 -->
+    <div id="page2" class="page">
+        <div class="card-group-left">
+            <div class="ty-title">感謝您的填寫！</div>
+
+            <div class="ty-text">
+                我們已經收到您的訊息～<br>
+                專員會儘快與您聯絡！
+            </div>
+
+            <!-- 事務所名稱 -->
+            <div class="ty-brand">
+                EZ開公司 讓您簡單開公司<br>
+                建碩會計師事務所
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('consultForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // 切換頁面顯示
+            document.getElementById('page1').style.display = 'none';
+            document.getElementById('page2').style.display = 'flex';
+            
+            // 透過 fetch 將表單資料送至 Google Apps Script 後端（以寫入 Excel）
+            const formData = new FormData(this);
+            fetch(this.action, {
+                method: 'POST',
+                body: formData
+            }).catch(error => console.error('Excel 傳送錯誤:', error));
+        });
+    </script>
+</body>
+</html>
