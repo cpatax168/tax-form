@@ -27,11 +27,9 @@
             box-sizing: border-box;
         }
 
-        /* 背景設定 */
         #page1 { background-image: url('big1.jpg'); background-size: cover; background-position: center; background-color: #0f2b5c; }
         #page2 { background-image: url('big2.jpg'); background-size: cover; background-position: center; background-color: #0f2b5c; display: none; }
 
-        /* 第一頁卡片樣式 */
         .card-box {
             background: rgba(255, 255, 255, 0.95);
             padding: 30px 20px;
@@ -43,24 +41,24 @@
             word-break: break-all;
         }
 
-        /* 標題層次設定 */
+        /* 標題層次：深藍 -> 深藍 -> 中藍（層次區別） */
         .main-title-box { text-align: center; margin-bottom: 25px; line-height: 1.4; }
         .title-line1 { font-size: 24px; font-weight: 900; color: #0f2b5c; display: block; }
         .title-line2 { font-size: 20px; font-weight: 800; color: #1e3a8a; display: block; margin-top: 4px; }
-        .title-line3 { font-size: 18px; font-weight: 800; color: #0f2b5c; display: block; margin-top: 4px; }
+        .title-line3 { font-size: 18px; font-weight: 800; color: #2563eb; display: block; margin-top: 4px; }
 
         .form-group { margin-bottom: 20px; text-align: left; }
-        label.main-label { display: block; font-size: 22px; font-weight: 900; color: #1a202c; margin-bottom: 8px; }
+        label.main-label { display: block; font-size: 18px; font-weight: 800; color: #1a202c; margin-bottom: 8px; }
         
-        .required-star { color: #e53e3e; font-size: 22px; line-height: 0; vertical-align: -5px; font-weight: 900; }
-        .note-text { font-size: 15px; color: #e53e3e; font-weight: bold; margin-left: 6px; }
+        .required-star { color: #e53e3e; font-size: 20px; line-height: 0; vertical-align: -4px; font-weight: 900; }
+        .note-text { font-size: 14px; color: #e53e3e; font-weight: bold; margin-left: 6px; }
 
         .input-oval { width: 100%; padding: 14px 18px; border-radius: 50px; border: 2px solid #5294e2; font-size: 17px; box-sizing: border-box; background-color: #ffffff; color: #1a202c; }
         .input-oval::placeholder { font-size: 14px; color: #9ca3af; }
         textarea.input-oval { border-radius: 20px; }
 
         .color-cards-grid { display: flex; flex-direction: column; gap: 10px; }
-        .color-card { display: flex; align-items: center; padding: 15px 18px; border-radius: 20px; font-size: 18px; font-weight: bold; cursor: pointer; }
+        .color-card { display: flex; align-items: center; padding: 15px 18px; border-radius: 20px; font-size: 17px; font-weight: bold; cursor: pointer; }
         .color-card input[type="checkbox"] { width: 20px; height: 20px; margin-right: 12px; flex-shrink: 0; }
 
         .card-yellow { background-color: #f6c90e; color: #1a202c; }
@@ -72,65 +70,15 @@
 
         .submit-btn { width: 100%; padding: 16px; border-radius: 50px; border: none; background-color: #0f2b5c; color: white; font-size: 20px; font-weight: bold; cursor: pointer; margin-top: 10px; box-sizing: border-box; }
 
-        /* ==========================================
-           第二頁：統一深藍色系，字體優化
-           ========================================== */
         .page-ty { 
-            width: 100%; 
-            min-height: 100vh; 
-            background-image: url('big2.jpg'); 
-            background-size: cover; 
-            background-position: center; 
-            background-color: #0f2b5c; 
-            display: none; 
-            align-items: center; 
-            justify-content: center; 
-            padding: 20px 15px; 
-            box-sizing: border-box; 
+            width: 100%; min-height: 100vh; background-image: url('big2.jpg'); background-size: cover; background-position: center; background-color: #0f2b5c; display: none; align-items: center; justify-content: center; padding: 20px 15px; box-sizing: border-box; 
         }
-
         .ty-container { 
-            text-align: center; 
-            color: #0f2b5c; 
-            width: 100%; 
-            max-width: 450px; 
-            margin: 40px auto 0 auto; 
-            padding: 10px; 
-            background: transparent !important; 
-            box-shadow: none !important; 
+            text-align: center; color: #0f2b5c; width: 100%; max-width: 450px; margin: 40px auto 0 auto; padding: 10px; background: transparent !important; box-shadow: none !important; 
         }
-
-        .ty-title { 
-            font-size: 22px; 
-            font-weight: 900; 
-            margin-bottom: 12px; 
-            color: #0f2b5c; 
-            background: transparent; 
-            white-space: nowrap;
-        }
-
-        .ty-text { 
-            font-size: 16px; 
-            font-weight: 850; 
-            line-height: 1.6; 
-            margin-bottom: 20px; 
-            color: #0f2b5c; 
-            background: transparent; 
-            white-space: nowrap;
-        }
-
-        /* 統一為深藍色 */
-        .ty-brand { 
-            font-size: 17px; 
-            font-weight: 950; 
-            line-height: 1.6; 
-            color: #0f2b5c; 
-            background: transparent !important; 
-            box-shadow: none !important; 
-            padding: 0 !important; 
-            margin-top: 10px; 
-            white-space: nowrap;
-        }
+        .ty-title { font-size: 22px; font-weight: 900; margin-bottom: 12px; color: #0f2b5c; background: transparent; white-space: nowrap; }
+        .ty-text { font-size: 16px; font-weight: 850; line-height: 1.6; margin-bottom: 20px; color: #0f2b5c; background: transparent; white-space: nowrap; }
+        .ty-brand { font-size: 17px; font-weight: 950; line-height: 1.6; color: #0f2b5c; background: transparent !important; box-shadow: none !important; padding: 0 !important; margin-top: 10px; white-space: nowrap; }
     </style>
 </head>
 <body>
@@ -143,8 +91,7 @@
                 <span class="title-line3">建碩會計師事務所</span>
             </div>
 
-            <form id="consultForm" action="https://script.google.com/macros/s/AKfycbwh3zZdfxX3TKnOjfYAkN1Qi5btrs8NOtyY80ep8Q5QTGuzR0iTdFo486JA8iZOg5hZ0Q/exec" method="POST">
-                <div class="form-group"><label class="main-label">諮詢表單</label></div>
+            <form id="consultForm" action="https://script.google.com/macros/s/AKfycbxHIGvALFiKpw2A2RT4su3Xl_4wTdH1wpABxS9_eBtREsLNrO-R9VBfzkiskHD7hhcOhQ/exec" method="POST">
                 <div class="form-group"><label class="main-label">公司 <span class="required-star">*</span><span class="note-text">(*必填)</span></label><input type="text" class="input-oval" name="公司" placeholder="請輸入公司名稱" required></div>
                 <div class="form-group"><label class="main-label">姓名 <span class="required-star">*</span></label><input type="text" class="input-oval" name="姓名" placeholder="請輸入您的姓名" required></div>
                 <div class="form-group"><label class="main-label">連絡電話 <span class="required-star">*</span></label><input type="text" class="input-oval" name="連絡電話" placeholder="請輸入連絡電話" required></div>
