@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EZ開公司--諮詢表單</title>
     <style>
+        /* 基礎頁面設定 */
         body, html {
             margin: 0;
             padding: 0;
@@ -26,9 +27,11 @@
             box-sizing: border-box;
         }
 
+        /* 背景設定 */
         #page1 { background-image: url('big1.jpg'); background-size: cover; background-position: center; background-color: #0f2b5c; }
         #page2 { background-image: url('big2.jpg'); background-size: cover; background-position: center; background-color: #0f2b5c; display: none; }
 
+        /* 第一頁卡片樣式 */
         .card-box {
             background: rgba(255, 255, 255, 0.95);
             padding: 30px 20px;
@@ -82,13 +85,14 @@
             flex-direction: column;
             justify-content: space-between; 
             align-items: center;
-            padding: 45px 15px 35px 15px; /* 稍微增加上方內距，讓感謝語往下掉約 1 公分 */
+            padding: 20px 15px; 
             box-sizing: border-box; 
         }
 
+        /* 上半部：感謝與訊息文字往下推開 */
         .ty-top-section {
             text-align: center;
-            margin-top: 25px; /* 往下推開 */
+            margin-top: 70px; /* 上方留白，讓感謝語從這裡開始 (比原本多往下推了約 1.3 公分) */
             background: transparent !important;
         }
 
@@ -110,9 +114,10 @@
             white-space: nowrap;
         }
 
+        /* 下半部：公司三行字整個往下搬，完全離開綠色區域 */
         .ty-bottom-section {
             text-align: center;
-            margin-bottom: 15px; /* 往下壓，確保完全離開綠色區域、落在純藍色底 */
+            margin-bottom: 60px; /* 往下壓，確保完全落在純藍色底 */
             background: transparent !important;
         }
 
@@ -138,7 +143,7 @@
                 <span class="title-line3">建碩會計師事務所</span>
             </div>
 
-            <form id="consultForm" action="https://script.google.com/macros/s/AKfycbxHIGvALFiKpw2A2RT4su3Xl_4wTdH1wpABxS9_eBtREsLNrO-R9VBfzkiskHD7hhcOhQ/exec" method="POST">
+            <form id="consultForm" action="YOUR_GOOGLE_APPS_SCRIPT_URL" method="POST">
                 <div class="form-group"><label class="main-label">公司 <span class="required-star">*</span><span class="note-text">(*必填)</span></label><input type="text" class="input-oval" name="公司" placeholder="請輸入公司名稱" required></div>
                 <div class="form-group"><label class="main-label">姓名 <span class="required-star">*</span></label><input type="text" class="input-oval" name="姓名" placeholder="請輸入您的姓名" required></div>
                 <div class="form-group"><label class="main-label">連絡電話 <span class="required-star">*</span></label><input type="text" class="input-oval" name="連絡電話" placeholder="請輸入連絡電話" required></div>
