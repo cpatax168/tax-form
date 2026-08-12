@@ -31,7 +31,7 @@
         #page1 { background-image: url('big1.jpg'); background-size: cover; background-position: center; background-color: #0f2b5c; }
         #page2 { background-image: url('big2.jpg'); background-size: cover; background-position: center; background-color: #0f2b5c; display: none; }
 
-        /* 第一頁卡片樣式維持不變 */
+        /* 第一頁卡片樣式 */
         .card-box {
             background: rgba(255, 255, 255, 0.95);
             padding: 30px 20px;
@@ -43,26 +43,37 @@
             word-break: break-all;
         }
 
-        h1 { 
-            font-size: 22px; 
-            color: #0f2b5c; 
-            margin-bottom: 20px; 
-            font-weight: 900; 
-            text-align: center; 
+        /* 第一頁頂部三排獨立標題設定 */
+        .main-title-box {
+            text-align: center;
+            margin-bottom: 25px;
             line-height: 1.4;
         }
-        
-        .h1-sub {
+        .title-line1 {
+            font-size: 24px;
+            font-weight: 900;
+            color: #0f2b5c;
             display: block;
-            font-size: 16px;
-            color: #334155;
+        }
+        .title-line2 {
+            font-size: 20px;
+            font-weight: 800;
+            color: #1e3a8a;
+            display: block;
+            margin-top: 4px;
+        }
+        .title-line3 {
+            font-size: 18px;
             font-weight: 700;
-            margin-top: 8px;
-            line-height: 1.4;
+            color: #334155;
+            display: block;
+            margin-top: 4px;
         }
 
         .form-group { margin-bottom: 20px; text-align: left; }
-        label.main-label { display: block; font-size: 19px; font-weight: bold; color: #1a202c; margin-bottom: 8px; }
+        
+        /* 讓「諮詢表單」跟「公司」字型大小一模一樣大、粗體 */
+        label.main-label { display: block; font-size: 22px; font-weight: 900; color: #1a202c; margin-bottom: 8px; }
         
         .required-star { color: #e53e3e; font-size: 22px; line-height: 0; vertical-align: -5px; font-weight: 900; }
         .note-text { font-size: 15px; color: #e53e3e; font-weight: bold; margin-left: 6px; }
@@ -107,7 +118,7 @@
         }
 
         /* ==========================================
-           第二頁：完全拔掉白色卡片與底色，只留純字體與完美下移
+           第二頁：無白色卡片、純字體、完美下移
            ========================================== */
         .page-ty {
             width: 100%;
@@ -128,10 +139,10 @@
             color: #0f2b5c; 
             width: 100%; 
             max-width: 500px;
-            margin: 50px auto 0 auto; /* 往下沉穩推開距離 */
+            margin: 50px auto 0 auto; 
             padding: 15px;
-            background: transparent !important; /* 確保無任何底色 */
-            box-shadow: none !important;        /* 確保無任何陰影卡片效果 */
+            background: transparent !important; 
+            box-shadow: none !important;        
         }
 
         .ty-title { 
@@ -168,11 +179,16 @@
     <!-- 第一頁：填寫表單 -->
     <div id="page1" class="page">
         <div class="card-box">
-            <h1>
-                EZ開公司，幫您簡單開公司
-                <span class="h1-sub">建碩會計師事務所諮詢表單</span>
-            </h1>
-            <form id="consultForm" action="YOUR_GOOGLE_APPS_SCRIPT_URL" method="POST">
+            <div class="main-title-box">
+                <span class="title-line1">EZ開公司</span>
+                <span class="title-line2">幫您簡單開公司</span>
+                <span class="title-line3">建碩會計師事務所</span>
+            </div>
+
+            <form id="consultForm" action="https://script.google.com/macros/s/AKfycbwh3zZdfxX3TKnOjfYAkN1Qi5btrs8NOtyY80ep8Q5QTGuzR0iTdFo486JA8iZOg5hZ0Q/exec" method="POST">
+                <div class="form-group">
+                    <label class="main-label">諮詢表單</label>
+                </div>
                 <div class="form-group">
                     <label class="main-label">公司 <span class="required-star">*</span><span class="note-text">(*必填)</span></label>
                     <input type="text" class="input-oval" name="公司" placeholder="請輸入公司名稱" required>
@@ -205,7 +221,7 @@
         </div>
     </div>
 
-    <!-- 第二頁：感謝回覆頁（純文字、無白底、無卡片） -->
+    <!-- 第二頁：感謝回覆頁 -->
     <div id="page2" class="page-ty">
         <div class="ty-container">
             <div class="ty-title">感謝您的填寫！</div>
