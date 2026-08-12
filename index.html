@@ -23,7 +23,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 40px 20px;
+            padding: 20px 10px;
             box-sizing: border-box;
         }
 
@@ -31,22 +31,22 @@
         #page1 { background-image: url('big1.jpg'); background-size: cover; background-position: center; background-color: #0f2b5c; }
         #page2 { background-image: url('big2.jpg'); background-size: cover; background-position: center; background-color: #0f2b5c; display: none; }
 
-        /* 第一頁卡片樣式（預設為電腦版大器尺寸） */
+        /* 第一頁卡片樣式維持不變 */
         .card-box {
             background: rgba(255, 255, 255, 0.95);
-            padding: 40px;
-            border-radius: 30px;
+            padding: 30px 20px;
+            border-radius: 25px;
             width: 100%;
-            max-width: 650px;
+            max-width: 600px;
             box-shadow: 0 15px 40px rgba(0,0,0,0.3);
             box-sizing: border-box;
+            word-break: break-all;
         }
 
-        /* 電腦版預設標題大小 */
         h1 { 
-            font-size: 32px; 
+            font-size: 22px; 
             color: #0f2b5c; 
-            margin-bottom: 25px; 
+            margin-bottom: 20px; 
             font-weight: 900; 
             text-align: center; 
             line-height: 1.4;
@@ -54,35 +54,36 @@
         
         .h1-sub {
             display: block;
-            font-size: 20px;
+            font-size: 16px;
             color: #334155;
             font-weight: 700;
-            margin-top: 5px;
+            margin-top: 8px;
+            line-height: 1.4;
         }
 
-        .form-group { margin-bottom: 25px; text-align: left; }
-        label.main-label { display: block; font-size: 22px; font-weight: bold; color: #1a202c; margin-bottom: 10px; }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        label.main-label { display: block; font-size: 19px; font-weight: bold; color: #1a202c; margin-bottom: 8px; }
         
-        .required-star { color: #e53e3e; font-size: 24px; line-height: 0; vertical-align: -5px; font-weight: 900; }
-        .note-text { font-size: 16px; color: #e53e3e; font-weight: bold; margin-left: 6px; }
+        .required-star { color: #e53e3e; font-size: 22px; line-height: 0; vertical-align: -5px; font-weight: 900; }
+        .note-text { font-size: 15px; color: #e53e3e; font-weight: bold; margin-left: 6px; }
 
         .input-oval { 
             width: 100%; 
-            padding: 16px 20px; 
+            padding: 14px 18px; 
             border-radius: 50px; 
             border: 2px solid #5294e2; 
-            font-size: 18px; 
+            font-size: 17px; 
             box-sizing: border-box; 
             background-color: #ffffff; 
             color: #1a202c; 
         }
         
-        .input-oval::placeholder { font-size: 16px; color: #9ca3af; }
+        .input-oval::placeholder { font-size: 14px; color: #9ca3af; }
         textarea.input-oval { border-radius: 20px; }
 
-        .color-cards-grid { display: flex; flex-direction: column; gap: 12px; }
-        .color-card { display: flex; align-items: center; padding: 18px 20px; border-radius: 25px; font-size: 20px; font-weight: bold; cursor: pointer; }
-        .color-card input[type="checkbox"] { width: 22px; height: 22px; margin-right: 15px; flex-shrink: 0; }
+        .color-cards-grid { display: flex; flex-direction: column; gap: 10px; }
+        .color-card { display: flex; align-items: center; padding: 15px 18px; border-radius: 20px; font-size: 18px; font-weight: bold; cursor: pointer; }
+        .color-card input[type="checkbox"] { width: 20px; height: 20px; margin-right: 12px; flex-shrink: 0; }
 
         .card-yellow { background-color: #f6c90e; color: #1a202c; }
         .card-green  { background-color: #2bb673; color: #ffffff; }
@@ -93,77 +94,72 @@
 
         .submit-btn { 
             width: 100%; 
-            padding: 18px; 
+            padding: 16px; 
             border-radius: 50px; 
             border: none; 
             background-color: #0f2b5c; 
             color: white; 
-            font-size: 22px; 
+            font-size: 20px; 
             font-weight: bold; 
             cursor: pointer; 
-            margin-top: 15px; 
+            margin-top: 10px; 
             box-sizing: border-box;
         }
 
-        /* 第二頁：電腦版預設樣式（大器、無白底） */
+        /* ==========================================
+           第二頁：完全拔掉白色卡片與底色，只留純字體與完美下移
+           ========================================== */
+        .page-ty {
+            width: 100%;
+            min-height: 100vh;
+            background-image: url('big2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-color: #0f2b5c;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 10px;
+            box-sizing: border-box;
+        }
+
         .ty-container { 
             text-align: center; 
             color: #0f2b5c; 
             width: 100%; 
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
+            max-width: 500px;
+            margin: 50px auto 0 auto; /* 往下沉穩推開距離 */
+            padding: 15px;
+            background: transparent !important; /* 確保無任何底色 */
+            box-shadow: none !important;        /* 確保無任何陰影卡片效果 */
         }
 
         .ty-title { 
-            font-size: 42px; 
+            font-size: 28px; 
             font-weight: 900; 
-            margin-bottom: 20px; 
+            margin-bottom: 15px; 
             color: #0f2b5c;
             background: transparent;
         }
 
         .ty-text { 
-            font-size: 26px; 
+            font-size: 18px; 
             font-weight: 850; 
             line-height: 1.6; 
-            margin-bottom: 30px; 
+            margin-bottom: 25px; 
             color: #0f2b5c;
             background: transparent;
         }
 
         .ty-brand { 
-            font-size: 28px; 
+            font-size: 20px; 
             font-weight: 950; 
             line-height: 1.6; 
             color: #0f2b5c; 
             background: transparent !important;
             box-shadow: none !important;
             padding: 0 !important; 
-            margin-top: 15px;
-        }
-
-        /* ==========================================
-           📱 手機專用適應規則（螢幕小於 600px 時自動啟動）
-           ========================================== */
-        @media (max-width: 600px) {
-            .page { padding: 15px 10px; }
-            .card-box { padding: 25px 18px; border-radius: 20px; }
-            
-            /* 在手機上自動把字體縮小到剛好塞進去，絕不亂斷行 */
-            h1 { font-size: 22px; white-space: nowrap; }
-            .h1-sub { font-size: 16px; }
-            
-            label.main-label { font-size: 18px; }
-            .input-oval { font-size: 16px; padding: 14px 16px; }
-            .input-oval::placeholder { font-size: 14px; }
-            .color-card { font-size: 17px; padding: 14px 16px; }
-            .submit-btn { font-size: 19px; padding: 15px; }
-
-            /* 第二頁在手機上的縮小與防斷行設定 */
-            .ty-title { font-size: 28px; white-space: nowrap; }
-            .ty-text { font-size: 19px; line-height: 1.5; white-space: nowrap; }
-            .ty-brand { font-size: 21px; line-height: 1.5; white-space: nowrap; }
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -176,7 +172,7 @@
                 EZ開公司，幫您簡單開公司
                 <span class="h1-sub">建碩會計師事務所諮詢表單</span>
             </h1>
-            <form id="consultForm" action="https://script.google.com/macros/s/AKfycbwh3zZdfxX3TKnOjfYAkN1Qi5btrs8NOtyY80ep8Q5QTGuzR0iTdFo486JA8iZOg5hZ0Q/exec" method="POST">
+            <form id="consultForm" action="YOUR_GOOGLE_APPS_SCRIPT_URL" method="POST">
                 <div class="form-group">
                     <label class="main-label">公司 <span class="required-star">*</span><span class="note-text">(*必填)</span></label>
                     <input type="text" class="input-oval" name="公司" placeholder="請輸入公司名稱" required>
@@ -209,8 +205,8 @@
         </div>
     </div>
 
-    <!-- 第二頁：感謝回覆頁 -->
-    <div id="page2" class="page">
+    <!-- 第二頁：感謝回覆頁（純文字、無白底、無卡片） -->
+    <div id="page2" class="page-ty">
         <div class="ty-container">
             <div class="ty-title">感謝您的填寫！</div>
             <div class="ty-text">
