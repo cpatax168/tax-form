@@ -43,52 +43,20 @@
             word-break: break-all;
         }
 
-        /* 第一頁頂部三排獨立標題設定 */
-        .main-title-box {
-            text-align: center;
-            margin-bottom: 25px;
-            line-height: 1.4;
-        }
-        .title-line1 {
-            font-size: 24px;
-            font-weight: 900;
-            color: #0f2b5c;
-            display: block;
-        }
-        .title-line2 {
-            font-size: 20px;
-            font-weight: 800;
-            color: #1e3a8a;
-            display: block;
-            margin-top: 4px;
-        }
-        .title-line3 {
-            font-size: 18px;
-            font-weight: 700;
-            color: #334155;
-            display: block;
-            margin-top: 4px;
-        }
+        /* 標題層次設定 */
+        .main-title-box { text-align: center; margin-bottom: 25px; line-height: 1.4; }
+        .title-line1 { font-size: 24px; font-weight: 900; color: #0f2b5c; display: block; }
+        .title-line2 { font-size: 20px; font-weight: 800; color: #1e3a8a; display: block; margin-top: 4px; }
+        /* 這裡調整為亮藍色，增加亮點 */
+        .title-line3 { font-size: 18px; font-weight: 800; color: #3b82f6; display: block; margin-top: 4px; }
 
         .form-group { margin-bottom: 20px; text-align: left; }
-        
-        /* 讓「諮詢表單」跟「公司」字型大小一模一樣大、粗體 */
         label.main-label { display: block; font-size: 22px; font-weight: 900; color: #1a202c; margin-bottom: 8px; }
         
         .required-star { color: #e53e3e; font-size: 22px; line-height: 0; vertical-align: -5px; font-weight: 900; }
         .note-text { font-size: 15px; color: #e53e3e; font-weight: bold; margin-left: 6px; }
 
-        .input-oval { 
-            width: 100%; 
-            padding: 14px 18px; 
-            border-radius: 50px; 
-            border: 2px solid #5294e2; 
-            font-size: 17px; 
-            box-sizing: border-box; 
-            background-color: #ffffff; 
-            color: #1a202c; 
-        }
-        
+        .input-oval { width: 100%; padding: 14px 18px; border-radius: 50px; border: 2px solid #5294e2; font-size: 17px; box-sizing: border-box; background-color: #ffffff; color: #1a202c; }
         .input-oval::placeholder { font-size: 14px; color: #9ca3af; }
         textarea.input-oval { border-radius: 20px; }
 
@@ -103,80 +71,19 @@
         .card-purple { background-color: #8b5cf6; color: #ffffff; }
         .card-gray   { background-color: #64748b; color: #ffffff; }
 
-        .submit-btn { 
-            width: 100%; 
-            padding: 16px; 
-            border-radius: 50px; 
-            border: none; 
-            background-color: #0f2b5c; 
-            color: white; 
-            font-size: 20px; 
-            font-weight: bold; 
-            cursor: pointer; 
-            margin-top: 10px; 
-            box-sizing: border-box;
-        }
+        .submit-btn { width: 100%; padding: 16px; border-radius: 50px; border: none; background-color: #0f2b5c; color: white; font-size: 20px; font-weight: bold; cursor: pointer; margin-top: 10px; box-sizing: border-box; }
 
-        /* ==========================================
-           第二頁：無白色卡片、純字體、完美下移
-           ========================================== */
-        .page-ty {
-            width: 100%;
-            min-height: 100vh;
-            background-image: url('big2.jpg');
-            background-size: cover;
-            background-position: center;
-            background-color: #0f2b5c;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 20px 10px;
-            box-sizing: border-box;
-        }
-
-        .ty-container { 
-            text-align: center; 
-            color: #0f2b5c; 
-            width: 100%; 
-            max-width: 500px;
-            margin: 50px auto 0 auto; 
-            padding: 15px;
-            background: transparent !important; 
-            box-shadow: none !important;        
-        }
-
-        .ty-title { 
-            font-size: 28px; 
-            font-weight: 900; 
-            margin-bottom: 15px; 
-            color: #0f2b5c;
-            background: transparent;
-        }
-
-        .ty-text { 
-            font-size: 18px; 
-            font-weight: 850; 
-            line-height: 1.6; 
-            margin-bottom: 25px; 
-            color: #0f2b5c;
-            background: transparent;
-        }
-
-        .ty-brand { 
-            font-size: 20px; 
-            font-weight: 950; 
-            line-height: 1.6; 
-            color: #0f2b5c; 
-            background: transparent !important;
-            box-shadow: none !important;
-            padding: 0 !important; 
-            margin-top: 10px;
-        }
+        /* 第二頁 */
+        .page-ty { width: 100%; min-height: 100vh; background-image: url('big2.jpg'); background-size: cover; background-position: center; background-color: #0f2b5c; display: none; align-items: center; justify-content: center; padding: 20px 10px; box-sizing: border-box; }
+        .ty-container { text-align: center; color: #0f2b5c; width: 100%; max-width: 500px; margin: 50px auto 0 auto; padding: 15px; background: transparent !important; box-shadow: none !important; }
+        .ty-title { font-size: 28px; font-weight: 900; margin-bottom: 15px; color: #0f2b5c; background: transparent; }
+        .ty-text { font-size: 18px; font-weight: 850; line-height: 1.6; margin-bottom: 25px; color: #0f2b5c; background: transparent; }
+        /* 第二頁的品牌名也套用這個亮藍色 */
+        .ty-brand { font-size: 20px; font-weight: 950; line-height: 1.6; color: #3b82f6; background: transparent !important; box-shadow: none !important; padding: 0 !important; margin-top: 10px; }
     </style>
 </head>
 <body>
 
-    <!-- 第一頁：填寫表單 -->
     <div id="page1" class="page">
         <div class="card-box">
             <div class="main-title-box">
@@ -186,23 +93,11 @@
             </div>
 
             <form id="consultForm" action="https://script.google.com/macros/s/AKfycbwh3zZdfxX3TKnOjfYAkN1Qi5btrs8NOtyY80ep8Q5QTGuzR0iTdFo486JA8iZOg5hZ0Q/exec" method="POST">
-                <div class="form-group">
-                    <label class="main-label">諮詢表單</label>
-                </div>
-                <div class="form-group">
-                    <label class="main-label">公司 <span class="required-star">*</span><span class="note-text">(*必填)</span></label>
-                    <input type="text" class="input-oval" name="公司" placeholder="請輸入公司名稱" required>
-                </div>
-                <div class="form-group">
-                    <label class="main-label">姓名 <span class="required-star">*</span></label>
-                    <input type="text" class="input-oval" name="姓名" placeholder="請輸入您的姓名" required>
-                </div>
-                <div class="form-group">
-                    <label class="main-label">連絡電話 <span class="required-star">*</span></label>
-                    <input type="text" class="input-oval" name="連絡電話" placeholder="請輸入連絡電話" required>
-                </div>
-                <div class="form-group">
-                    <label class="main-label">您想諮詢哪方面的問題 <span class="required-star">*</span></label>
+                <div class="form-group"><label class="main-label">諮詢表單</label></div>
+                <div class="form-group"><label class="main-label">公司 <span class="required-star">*</span><span class="note-text">(*必填)</span></label><input type="text" class="input-oval" name="公司" placeholder="請輸入公司名稱" required></div>
+                <div class="form-group"><label class="main-label">姓名 <span class="required-star">*</span></label><input type="text" class="input-oval" name="姓名" placeholder="請輸入您的姓名" required></div>
+                <div class="form-group"><label class="main-label">連絡電話 <span class="required-star">*</span></label><input type="text" class="input-oval" name="連絡電話" placeholder="請輸入連絡電話" required></div>
+                <div class="form-group"><label class="main-label">您想諮詢哪方面的問題 <span class="required-star">*</span></label>
                     <div class="color-cards-grid">
                         <label class="color-card card-yellow"><input type="checkbox" name="諮詢項目" value="工商登記"> 工商登記</label>
                         <label class="color-card card-green"><input type="checkbox" name="諮詢項目" value="記帳 \ 公司稅務申報"> 記帳 \ 公司稅務申報</label>
@@ -212,28 +107,17 @@
                         <label class="color-card card-gray"><input type="checkbox" name="諮詢項目" value="其他"> 其他項目</label>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="main-label">請說明您目前想解決的問題 <span class="required-star">*</span></label>
-                    <textarea class="input-oval" name="想解決的問題" rows="4" placeholder="請簡述您的需求..." required></textarea>
-                </div>
+                <div class="form-group"><label class="main-label">請說明您目前想解決的問題 <span class="required-star">*</span></label><textarea class="input-oval" name="想解決的問題" rows="4" placeholder="請簡述您的需求..." required></textarea></div>
                 <button type="submit" class="submit-btn">確認送出諮詢</button>
             </form>
         </div>
     </div>
 
-    <!-- 第二頁：感謝回覆頁 -->
     <div id="page2" class="page-ty">
         <div class="ty-container">
             <div class="ty-title">感謝您的填寫！</div>
-            <div class="ty-text">
-                我們已經收到您的訊息～<br>
-                專員會儘快與您聯絡！
-            </div>
-            <div class="ty-brand">
-                EZ開公司<br>
-                為您簡單開公司<br>
-                建碩會計師事務所
-            </div>
+            <div class="ty-text">我們已經收到您的訊息～<br>專員會儘快與您聯絡！</div>
+            <div class="ty-brand">EZ開公司<br>為您簡單開公司<br>建碩會計師事務所</div>
         </div>
     </div>
 
